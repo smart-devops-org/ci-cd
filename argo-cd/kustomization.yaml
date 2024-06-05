@@ -1,0 +1,12 @@
+kind: Kustomization
+namespace: argocd
+helmCharts:
+  - name: argocd
+    releaseName: argo-cd
+    repo: https://argoproj.github.io/argo-helm
+    version: 6.7.12
+    namespace: argocd
+    valuesFile: values.yaml
+
+resources:
+  - ./ingress.yaml
